@@ -1,11 +1,19 @@
 body {
   background-color: #E0E0FF;
 }
-
+/*TODO: add experimental styles prefix here*/
 .red-white-key {
   background: linear-gradient(-30deg,#ff8383,#fff) !important;
 }
 
 .green-white-key {
   background: linear-gradient(-30deg,#85ff83,#fff) !important;
+}
+
+.red-black-key {
+  background: linear-gradient(-20deg,#dc1c3f,#ff8383,#dc1c3f) !important;
+}
+
+.green-black-key {
+  background: linear-gradient(-20deg,#0fc10c,#85ff83,#0fc10c) !important;
 }

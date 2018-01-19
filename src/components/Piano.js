@@ -10,17 +10,17 @@ export default class Piano extends Component {
           {keyMap.map((key, index) =>
             ((key.length == 1)?
               (<li key={index}>
-                        <div className={"anchor "+key[0]}
-                          onTouchStart={() => this.props.onPianoKeyDown(key[0])} onMouseDown={() => this.props.onPianoKeyDown(key[0])}
-                          onTouchEnd={() => this.props.onPianoKeyUp(key[0])} onMouseUp={() => this.props.onPianoKeyUp(key[0])}></div>
+                        <div className={"anchor "+key[0].join(" ")}
+                          onTouchStart={() => this.props.onPianoKeyDown(key[0][0])} onMouseDown={() => this.props.onPianoKeyDown(key[0][0])}
+                          onTouchEnd={() => this.props.onPianoKeyUp(key[0][0])} onMouseUp={() => this.props.onPianoKeyUp(key[0][0])}></div>
                       </li>)
             :(<li key={index}>
-                        <div className={"anchor "+key[0]}
-                          onTouchStart={() => this.props.onPianoKeyDown(key[0])} onMouseDown={() => this.props.onPianoKeyDown(key[0])}
-                          onTouchEnd={() => this.props.onPianoKeyUp(key[0])} onMouseUp={() => this.props.onPianoKeyUp(key[0])}></div>
-                        <span className={key[1]}
-                          onTouchStart={() => this.props.onPianoKeyDown(key[1])} onMouseDown={() => this.props.onPianoKeyDown(key[1])}
-                          onTouchEnd={() => this.props.onPianoKeyUp(key[1])} onMouseUp={() => this.props.onPianoKeyUp(key[1])}></span>
+                        <div className={"anchor "+key[0].join(" ")}
+                          onTouchStart={() => this.props.onPianoKeyDown(key[0][0])} onMouseDown={() => this.props.onPianoKeyDown(key[0][0])}
+                          onTouchEnd={() => this.props.onPianoKeyUp(key[0][0])} onMouseUp={() => this.props.onPianoKeyUp(key[0][0])}></div>
+                        <span className={key[1].join(" ")}
+                          onTouchStart={() => this.props.onPianoKeyDown(key[1][0])} onMouseDown={() => this.props.onPianoKeyDown(key[1][0])}
+                          onTouchEnd={() => this.props.onPianoKeyUp(key[1][0])} onMouseUp={() => this.props.onPianoKeyUp(key[1][0])}></span>
                       </li>))
           )}
         </ul>
@@ -57,7 +57,8 @@ export default class Piano extends Component {
 */
 
 Piano.propTypes = {
-  keyMap: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string.isRequired)).isRequired,
+  keyMap: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))).isRequired,
   onPianoKeyDown: PropTypes.func.isRequired,
   onPianoKeyUp: PropTypes.func.isRequired
 }
+//TODO: Use selected keys in keyMap instead of CSS active to show key status
