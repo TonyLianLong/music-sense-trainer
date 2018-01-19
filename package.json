@@ -28,6 +28,7 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-devtools": "^3.4.1",
+    "startaudiocontext": "^1.2.1",
     "tone": "^0.11.11"
   },
   "private": false,
