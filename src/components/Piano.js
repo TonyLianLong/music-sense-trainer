@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+//Part of the JSX here is from beautiful-piano's HTML
 export default class Piano extends Component {
   render() {
     var keyMap = this.props.keyMap;
